@@ -1,1 +1,28 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WOLFURIA Avatar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>WOLFURIA Avatar</h1>
+  <p>Создайте свой уникальный аватар!</p>
+
+  <div id="avatar-container">
+    <img id="body" src="assets/body.png" alt="Тело">
+    <img id="hair" src="assets/hair1.png" alt="Волосы">
+    <img id="clothes" src="assets/clothes1.png" alt="Одежда">
+  </div>
+
+  <div class="controls">
+    <button onclick="changeHair()">Сменить волосы</button>
+    <button onclick="changeClothes()">Сменить одежду</button>
+    <button onclick="saveAvatar()">Сохранить аватар</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WOLFURIA Avatar</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WOLFURIA Аватар</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>WOLFURIA Avatar</h1>
-<p>Создайте свой уникальный аватар!</p>
+<div id="app">
 
-<div class="gender-selection">
-  <button onclick="setGender('male')">Мужской</button>
-  <button onclick="setGender('female')">Женский</button>
-</div>
+  <div id="avatar" class="forest">
+    <img id="bg">
+    <img id="body">
+    <img id="hair">
+    <img id="clothes">
+    <img id="pants">
+  </div>
 
-<div id="avatar-container">
-  <img id="background" src="assets/forest.png" alt="Фон">
-  <img id="body" src="assets/body_male.png" alt="Тело">
-  <img id="hair" src="assets/hair1.png" alt="Волосы">
-  <img id="clothes" src="assets/clothes1.png" alt="Одежда">
-</div>
+  <div id="controls">
 
-<div class="background-selection">
-  <button onclick="changeBackground('forest')">Лес</button>
-  <button onclick="changeBackground('city')">Город</button>
-  <button onclick="changeBackground('space')">Космос</button>
-</div>
+    <select id="gender">
+      <option value="male">Мужской</option>
+      <option value="female">Женский</option>
+    </select>
 
-<div class="skin-palette">
-  <div class="color" style="background-color:#FAD7B5" onclick="changeSkin('#FAD7B5')"></div>
-  <div class="color" style="background-color:#F5CBA7" onclick="changeSkin('#F5CBA7')"></div>
-  <div class="color" style="background-color:#D2B48C" onclick="changeSkin('#D2B48C')"></div>
-  <div class="color" style="background-color:#A0522D" onclick="changeSkin('#A0522D')"></div>
-  <div class="color" style="background-color:#8B4513" onclick="changeSkin('#8B4513')"></div>
-  <div class="color" style="background-color:#5C4033" onclick="changeSkin('#5C4033')"></div>
-</div>
+    <h3>Голова</h3>
+    <button onclick="prevHair()">◀</button>
+    <button onclick="nextHair()">▶</button>
+    <input type="color" onchange="setHairColor(this.value)">
 
-<div class="controls">
-  <button onclick="changeHair()">Сменить волосы</button>
-  <button onclick="changeClothes()">Сменить одежду</button>
-  <button onclick="saveAvatar()">Сохранить аватар</button>
+    <h3>Тело</h3>
+    <input type="color" onchange="setSkinColor(this.value)">
+
+    <h3>Одежда</h3>
+    <button onclick="prevClothes()">◀</button>
+    <button onclick="nextClothes()">▶</button>
+    <input type="color" onchange="setClothesColor(this.value)">
+
+    <h3>Штаны</h3>
+    <button onclick="prevPants()">◀</button>
+    <button onclick="nextPants()">▶</button>
+    <input type="color" onchange="setPantsColor(this.value)">
+
+    <h3>Фон</h3>
+    <button onclick="setBg('forest')">🌲</button>
+    <button onclick="setBg('city')">🏙</button>
+    <button onclick="setBg('space')">🌌</button>
+
+  </div>
+
 </div>
 
 <script src="script.js"></script>
